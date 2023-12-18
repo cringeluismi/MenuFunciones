@@ -11,6 +11,16 @@ public class main {
         return vector;
 
     }
+
+    public static double media(int[] vector) {
+        double media;
+        int sumaValores = 0;
+        for (int i = 0; i < vector.length; i++) {
+            sumaValores = sumaValores + vector[i];
+        }
+        return (double)sumaValores/vector.length;
+    }
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -38,7 +48,7 @@ public class main {
 
                 case 2:
 
-                    System.out.println("Under construction");
+                    System.out.println("La media es: " + media(vector));
                     break;
 
                 case 3:
@@ -53,6 +63,7 @@ public class main {
 
                 case 5:
 
+                    System.out.println("Saliendo del programa...");
                     exit = true;
                     break;
 
