@@ -21,6 +21,26 @@ public class main {
         return (double)sumaValores/vector.length;
     }
 
+    public static boolean existeNum(int userNum, int[] vector) {
+        for (int i = 0; i < vector.length; i++) {
+            if (userNum == vector[i]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static int mayoresQue(int userNum, int[] vector) {
+        int cont = 0;
+        for (int i = 0; i < vector.length; i++) {
+            if (userNum < vector[i]) {
+                cont ++;
+            }
+        }
+        return cont;
+    }
+
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -53,12 +73,20 @@ public class main {
 
                 case 3:
 
-                    System.out.println("Under construction");
+                    System.out.println("Introduce el número a buscar: ");
+                    int userNumber = sc.nextInt();
+                    if (existeNum(userNumber, vector)) {
+                        System.out.println(userNumber + " se encuentra en el vector.");
+                    } else {
+                        System.out.println(userNumber + " no se encuentra en el vector.");
+                    }
                     break;
 
                 case 4:
 
-                    System.out.println("Under construction");
+                    System.out.println("Introduce el número:");
+                    int userNumber4 = sc.nextInt();
+                    System.out.println(mayoresQue(userNumber4,vector));
                     break;
 
                 case 5:
